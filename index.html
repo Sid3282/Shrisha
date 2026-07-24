@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>Shrisha – नेपाली पात्रो, पञ्चाङ्ग र मुद्रा परिवर्तक</title>
+    <meta name="description" content="Shrisha – पूर्ण नेपाली पात्रो, पञ्चाङ्ग, मुद्रा परिवर्तक, मिति कन्भर्टर र उपयोगी उपकरणहरू। वि.सं. र ई.सं. मिति, तिथि, नक्षत्र, योग, करण, चौघडिया, मुहूर्त, सूर्योदय/सूर्यास्त।" />
+    <meta name="keywords" content="नेपाली पात्रो, Nepali Calendar, Panchang, नेपाली पञ्चाङ्ग, मिति कन्भर्टर, Date Converter, Currency Converter, Forex, Shrisha, तिथि, नक्षत्र, योग, करण, चौघडिया, मुहूर्त" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <link rel="canonical" href="https://shrisha.com/" />
+    <link rel="alternate" hreflang="ne" href="https://shrisha.com/" />
+    <link rel="alternate" hreflang="en" href="https://shrisha.com/en" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shrisha – नेपाली पात्रो, पञ्चाङ्ग र मुद्रा परिवर्तक" />
+    <meta property="og:description" content="पूर्ण नेपाली पात्रो, पञ्चाङ्ग, मुद्रा परिवर्तक, मिति कन्भर्टर र उपयोगी उपकरणहरू।" />
+    <meta property="og:url" content="https://shrisha.com/" />
+    <meta property="og:site_name" content="Shrisha" />
+    <meta property="og:image" content="https://shrisha.com/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shrisha – नेपाली पात्रो, पञ्चाङ्ग र मुद्रा परिवर्तक" />
+    <meta name="twitter:description" content="पूर्ण नेपाली पात्रो, पञ्चाङ्ग, मुद्रा परिवर्तक, मिति कन्भर्टर र उपयोगी उपकरणहरू।" />
+    <meta name="twitter:image" content="https://shrisha.com/assets/og-image.png" />
+
+    <!-- Preconnect & Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" /></noscript>
+
+    <!-- Font Awesome -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Structured Data (omitted for brevity, same as before) -->
+    <script type="application/ld+json">
+        { /* ... same as before ... */ }
+    </script>
+
+    <style>
+        /* Skeleton and other overrides (same as before) */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-wave 1.5s ease-in-out infinite;
+            border-radius: 4px;
+        }
+        @keyframes skeleton-wave {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .skeleton-text {
+            height: 16px;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .skeleton-text-sm {
+            height: 12px;
+            width: 60%;
+        }
+        .skeleton-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .skeleton-cell {
+            aspect-ratio: 1;
+            min-height: 90px;
+            border-radius: 6px;
+        }
+
+        .calendar-mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 3px;
+        }
+        .calendar-mode-toggle .mode-btn {
+            padding: 4px 12px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            cursor: pointer;
+            background: transparent;
+            color: var(--text-secondary);
+            transition: 0.2s;
+            font-family: inherit;
+        }
+        .calendar-mode-toggle .mode-btn.active {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 1px 4px rgba(211, 47, 47, 0.2);
+        }
+        .calendar-mode-toggle .mode-btn:hover:not(.active) {
+            color: var(--text-main);
+        }
+
+        .upcoming-container {
+            max-height: 380px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+        .upcoming-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .upcoming-container::-webkit-scrollbar-track {
+            background: var(--bg-main);
+            border-radius: 4px;
+        }
+        .upcoming-container::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        .ad-cell-inner {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            padding: 6px 4px;
+        }
+        .ad-cell-top {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        .ad-day-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            line-height: 1;
+        }
+        .today .ad-day-number {
+            background: var(--primary);
+            color: #fff;
+        }
+        .is-sat .ad-day-number {
+            color: var(--primary);
+        }
+        .today.is-sat .ad-day-number {
+            color: #fff;
+        }
+        .ad-cell-center {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 2px;
+            flex: 1;
+            margin-top: 2px;
+        }
+        .ad-bs-date {
+            font-size: 0.65rem;
+            color: var(--text-light);
+            line-height: 1.3;
+            font-weight: 500;
+        }
+        .ad-festival {
+            font-size: 0.65rem;
+            color: #D32F2F;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+        .ad-tithi {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            line-height: 1.3;
+            font-weight: 500;
+        }
+
+        .logo-sakura {
+            font-size: 1.4rem;
+            line-height: 1;
+            margin-left: 2px;
+        }
+        .footer-logo .logo-sakura {
+            font-size: 1.6rem;
+            margin-left: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .calendar-mode-toggle .mode-btn {
+                font-size: 0.65rem;
+                padding: 3px 8px;
+            }
+            .header-controls {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .dropdown-group {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .calendar-mode-toggle .mode-btn {
+                font-size: 0.6rem;
+                padding: 2px 6px;
+            }
+            .ad-day-number {
+                font-size: 1rem;
+                min-width: 24px;
+                height: 24px;
+            }
+            .ad-bs-date,
+            .ad-festival,
+            .ad-tithi {
+                font-size: 0.55rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="nav-left">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Shrisha</span>
+                    <span class="logo-sakura">🌸</span>
+                </a>
+            </div>
+            <nav id="main-nav" class="main-nav">
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="#tools-section" class="nav-link tools-nav-link">Tools</a></li>
+                    <li><a href="#calendar" class="nav-link">Calendar</a></li>
+                    <li><a href="Forex.html" class="nav-link" target="_blank">Forex</a></li>
+                    <li><a href="#" class="nav-link">Contact Us</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== TOP INFO BAR ===== -->
+    <section class="info-bar-container">
+        <div class="info-bar" id="info-bar">
+            <div class="info-item">
+                <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="info-content">
+                    <div class="info-label">आजको मिति</div>
+                    <div class="info-value" id="info-bs-date">--</div>
+                </div>
+            </div>
+            <div class="info-divider"></div>
+            <div class="info-item">
+                <div class="info-icon"><i class="far fa-calendar-alt"></i></div>
+                <div class="info-content">
+                    <div class="info-label">AD Date</div>
+                    <div class="info-value" id="info-ad-date">--</div>
+                </div>
+            </div>
+            <div class="info-divider"></div>
+            <div class="info-item">
+                <div class="info-icon"><i class="fas fa-sun"></i></div>
+                <div class="info-content">
+                    <div class="info-label">तिथि</div>
+                    <div class="info-value" id="info-tithi">--</div>
+                </div>
+            </div>
+            <div class="info-divider"></div>
+            <div class="info-item">
+                <div class="info-icon"><img src="assets/sunrise-icon.png" class="icon-img" alt="Sunrise" /></div>
+                <div class="info-content">
+                    <div class="info-label">सूर्योदय</div>
+                    <div class="info-value" id="info-sunrise">--:--</div>
+                </div>
+            </div>
+            <div class="info-divider"></div>
+            <div class="info-item">
+                <div class="info-icon"><img src="assets/sunset-icon.png" class="icon-img" alt="Sunset" /></div>
+                <div class="info-content">
+                    <div class="info-label">सूर्यास्त</div>
+                    <div class="info-value" id="info-sunset">--:--</div>
+                </div>
+            </div>
+            <div class="info-divider"></div>
+            <div class="info-item">
+                <div class="info-icon"><i class="fas fa-moon"></i></div>
+                <div class="info-content">
+                    <div class="info-label">चन्द्रमा</div>
+                    <div class="info-value" id="info-moon">--</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main" id="calendar">
+        <div class="content-grid">
+            <!-- Calendar Card -->
+            <section class="calendar-card">
+                <div class="calendar-header">
+                    <div class="month-nav-group">
+                        <button id="prev" class="nav-btn" aria-label="Previous month"><i class="fas fa-chevron-left"></i></button>
+                        <div class="month-title"><span id="period-label" class="period-label">Loading...</span></div>
+                        <button id="next" class="nav-btn" aria-label="Next month"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="header-controls">
+                        <div class="dropdown-group">
+                            <select id="year-selector" class="selector-dropdown" aria-label="Select Year"></select>
+                            <select id="month-selector" class="selector-dropdown" aria-label="Select Month"></select>
+                        </div>
+                        <div class="calendar-mode-toggle" id="calendar-mode-toggle">
+                            <button class="mode-btn active" data-mode="bs" aria-label="Nepali calendar mode">वि.सं.</button>
+                            <button class="mode-btn" data-mode="ad" aria-label="AD calendar mode">ई.सं.</button>
+                        </div>
+                        <button id="today-btn" class="today-btn-header"><i class="fas fa-calendar-check"></i> आज</button>
+                    </div>
+                </div>
+                <div class="calendar-wrapper">
+                    <div id="calendar-skeleton" style="display:block;padding:20px;">
+                        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;">
+                            <!-- 35 skeleton cells -->
+                            <div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div>
+                            <div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div>
+                            <div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div>
+                            <div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div>
+                            <div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div><div class="skeleton skeleton-cell"></div>
+                        </div>
+                    </div>
+                    <table id="calendar-table" role="grid" style="display:none;"></table>
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Upcoming Events -->
+                <div class="sidebar-card upcoming-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-calendar-alt" style="color:#D32F2F;margin-right:8px;"></i>Upcoming Events</h3>
+                    </div>
+                    <div class="upcoming-container">
+                        <ul id="upcoming-list" class="upcoming-list" aria-live="polite">
+                            <li class="upcoming-item" style="justify-content:center;color:var(--text-light);font-size:0.85rem;">
+                                <span>Loading...</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Currency Converter -->
+                <div class="sidebar-card currency-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-exchange-alt" style="color:#D32F2F;margin-right:8px;"></i>Currency Converter</h3>
+                    </div>
+                    <div class="currency-compact">
+                        <div class="currency-row">
+                            <input type="number" id="currency-amount" class="currency-input" placeholder="Amount" value="1">
+                            <select id="currency-from" class="currency-select"></select>
+                            <select id="currency-to" class="currency-select"></select>
+                        </div>
+                        <button id="currency-convert-btn" class="compact-btn">Convert</button>
+                        <div id="currency-result" class="currency-result" style="min-height:36px;padding:6px;background:#f5f5f5;border-radius:6px;text-align:center;font-weight:600;">--</div>
+                    </div>
+                </div>
+
+                <!-- Date Converter -->
+                <div class="sidebar-card converter-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-sync-alt" style="color:#D32F2F;margin-right:8px;"></i>Date Converter</h3>
+                    </div>
+                    <div class="converter-compact">
+                        <div class="converter-tabs">
+                            <button class="converter-tab active" data-mode="bs-to-ad">BS → AD</button>
+                            <button class="converter-tab" data-mode="ad-to-bs">AD → BS</button>
+                        </div>
+                        <div id="bs-to-ad-compact" class="converter-form-compact active">
+                            <div class="compact-row">
+                                <select id="bs-month-compact" class="compact-select"></select>
+                                <input type="number" id="bs-day-compact" class="compact-input" placeholder="Day" min="1" max="32" value="1">
+                                <input type="number" id="bs-year-compact" class="compact-input" placeholder="BS Year" min="2000" max="2099" value="2082">
+                            </div>
+                            <button id="convert-bs-compact-btn" class="compact-btn">Convert</button>
+                            <div id="bs-to-ad-compact-result" class="compact-result" style="min-height:36px;">--</div>
+                        </div>
+                        <div id="ad-to-bs-compact" class="converter-form-compact">
+                            <div class="compact-row">
+                                <select id="ad-month-compact" class="compact-select"></select>
+                                <input type="number" id="ad-day-compact" class="compact-input" placeholder="Day" min="1" max="31" value="1">
+                                <input type="number" id="ad-year-compact" class="compact-input" placeholder="AD Year" min="1943" max="2042" value="2025">
+                            </div>
+                            <button id="convert-ad-compact-btn" class="compact-btn">Convert</button>
+                            <div id="ad-to-bs-compact-result" class="compact-result" style="min-height:36px;">--</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- ===== PANCHANG MODAL ===== -->
+    <div id="panchang-modal" class="panchang-modal" aria-hidden="true" role="dialog">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-card" role="document">
+                <button class="modal-close" id="modal-close" aria-label="बन्द">✕</button>
+
+                <div class="modal-header">
+                    <div class="header-left">
+                        <h3 id="modal-title" class="modal-bs-title">—</h3>
+                        <div class="modal-ad-date" id="modal-ad">—</div>
+                    </div>
+                    <div class="header-right">
+                        <div class="modal-sun-times">
+                            <span class="sun-time-chip"><img src="assets/sunrise-icon.png" class="icon-img" alt="Sunrise" /> सूर्योदय: <span id="modal-sunrise">—</span></span>
+                            <span class="sun-time-chip"><img src="assets/sunset-icon.png" class="icon-img" alt="Sunset" /> सूर्यास्त: <span id="modal-sunset">—</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Panchang Grid -->
+                    <div class="panchang-grid-container">
+                        <div class="panchang-row">
+                            <div class="p-item"><label>दिन</label><span id="p-day">-</span></div>
+                            <div class="p-item"><label>तिथि</label><span id="p-tithi" class="text-red">-</span></div>
+                            <div class="p-item"><label>चन्द्र राशि</label><span id="p-chandra-rashi" class="text-red">-</span></div>
+                            <div class="p-item"><label>पक्ष</label><span id="p-paksha" class="text-red">-</span></div>
+                            <div class="p-item"><label>करण</label><span id="p-karana" class="text-red">-</span></div>
+                            <div class="p-item"><label>मास</label><span id="p-maas" class="text-red">-</span></div>
+                        </div>
+                        <div class="panchang-row">
+                            <div class="p-item"><label>नक्षत्र</label><span id="p-nakshatra">-</span></div>
+                            <div class="p-item"><label>योग</label><span id="p-yoga" class="text-red">-</span></div>
+                            <div class="p-item"><label>सूर्य राशि</label><span id="p-sun-rashi" class="text-red">-</span></div>
+                            <div class="p-item"><label>अयन</label><span id="p-ayan" class="text-red">-</span></div>
+                            <div class="p-item"><label>ऋतु</label><span id="p-ritu" class="text-red">-</span></div>
+                            <div class="p-item"><label>वार</label><span id="p-baar" class="text-red">-</span></div>
+                        </div>
+                        <div class="panchang-row festival-row">
+                            <div class="p-item festival-item">
+                                <label>आजका पर्वहरू</label>
+                                <span id="p-festivals" class="text-red">—</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Muhurat -->
+                    <h4 class="section-title">मुहूर्तहरू</h4>
+                    <div class="muhurat-grid">
+                        <div class="m-col">
+                            <div class="m-item"><span>राहु काल</span><span id="m-rahu">—</span></div>
+                            <div class="m-item"><span>यमगण्ड</span><span id="m-yamaganda">—</span></div>
+                            <div class="m-item"><span>गुलिक काल</span><span id="m-gulika">—</span></div>
+                            <div class="m-item"><span>अभिजित् मुहूर्त</span><span id="m-abhijit">—</span></div>
+                            <div class="m-item"><span>दुर्मुहूर्त</span><span id="m-dur">—</span></div>
+                        </div>
+                        <div class="m-col">
+                            <div class="m-item"><span>ब्रह्म मुहूर्त</span><span id="m-brahma">—</span></div>
+                            <div class="m-item"><span>अमृत काल</span><span id="m-amrit">—</span></div>
+                            <div class="m-item"><span>विजय मुहूर्त</span><span id="m-vijaya">—</span></div>
+                            <div class="m-item"><span>निशिता काल</span><span id="m-nishita">—</span></div>
+                            <div class="m-item"><span>वर्ज्यम्</span><span id="m-varjyam">—</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Choghadiya -->
+                    <h4 class="section-title">चौघडिया</h4>
+                    <div class="choghadiya-grid" id="choghadiya-grid">
+                        <!-- Generated by JS -->
+                    </div>
+
+                    <div class="modal-footer-note">
+                        <i class="fas fa-info-circle"></i> समयहरू तपाईंको स्थान अनुसार गणना गरिएको हो ।
+                        <span class="update-time"><i class="fas fa-sync-alt"></i> अन्तिम अपडेट: <span id="modal-update-time">--</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about-section">
+        <div class="about-wrapper">
+            <div class="about-text">
+                <h4 class="about-subtitle">Shrisha बारे</h4>
+                <h2 class="about-title">नेपाली संस्कृति, परम्परा र प्रविधिको संगम</h2>
+                <p>श्रीष्ठा तपाईंको दैनिक जीवनमा सहज बनाउनका लागि नेपाली पात्रो, मुद्रा परिवर्तन र अत्याधुनिक उपयोगी उपकरणहरूको एकमात्र स्थान हो।</p>
+                <button class="btn-primary">थप जान्नुहोस् <i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div class="about-image"><img src="assets/about-image.png" alt="Shrisha बारे" loading="lazy" /></div>
+        </div>
+    </section>
+
+    <!-- ===== TOOLS SECTION ===== -->
+    <section id="tools-section" class="tools-section">
+        <div class="tools-header">
+            <span class="tools-label">उपयोगी उपकरणहरू</span>
+            <h3 class="tools-title">आवश्यक उपकरणहरू</h3>
+        </div>
+        <div class="tools-grid">
+            <a href="#" class="tool-card" data-tool="vat"><div class="tool-icon"><i class="fas fa-calculator"></i></div><div class="tool-content"><h4>VAT Calculator</h4><p>भ्याट क्यालकुलेटर</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="emi"><div class="tool-icon"><i class="fas fa-landmark"></i></div><div class="tool-content"><h4>EMI Calculator</h4><p>ईएमआई क्यालकुलेटर</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="sip"><div class="tool-icon"><i class="fas fa-chart-line"></i></div><div class="tool-content"><h4>SIP Calculator</h4><p>एसआईपी क्यालकुलेटर</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="currency"><div class="tool-icon"><i class="fas fa-exchange-alt"></i></div><div class="tool-content"><h4>Currency Converter</h4><p>मुद्रा परिवर्तक</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="date"><div class="tool-icon"><i class="fas fa-calendar-alt"></i></div><div class="tool-content"><h4>Date Converter</h4><p>मिति कन्भर्टर</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="bsad"><div class="tool-icon"><i class="fas fa-sync-alt"></i></div><div class="tool-content"><h4>BS ⇄ AD Converter</h4><p>वि.सं. ⇄ ई.सं. कन्भर्टर</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="age"><div class="tool-icon"><i class="fas fa-birthday-cake"></i></div><div class="tool-content"><h4>Age Calculator</h4><p>उमेर क्यालकुलेटर</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="unit"><div class="tool-icon"><i class="fas fa-weight"></i></div><div class="tool-content"><h4>Unit Converter</h4><p>एकाइ कन्भर्टर</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="pdf"><div class="tool-icon"><i class="fas fa-file-pdf"></i></div><div class="tool-content"><h4>PDF Tools</h4><p>PDF उपकरणहरू</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="qr"><div class="tool-icon"><i class="fas fa-qrcode"></i></div><div class="tool-content"><h4>QR Generator</h4><p>क्यूआर जेनेरेटर</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="unicode"><div class="tool-icon"><i class="fas fa-font"></i></div><div class="tool-content"><h4>Unicode Converter</h4><p>युनिकोड कन्भर्टर</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+            <a href="#" class="tool-card" data-tool="char"><div class="tool-icon"><i class="fas fa-text-height"></i></div><div class="tool-content"><h4>Character Counter</h4><p>क्यारेक्टर काउन्टर</p></div><i class="fas fa-arrow-right tool-arrow"></i></a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-overlay"></div>
+        <div class="footer-content">
+            <div class="footer-column brand-col">
+                <div class="footer-logo">Shrisha <span class="logo-sakura">🌸</span></div>
+                <p class="footer-desc">नेपाली संस्कृतिको डिजिटल संगम</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#calendar">Calendar</a></li>
+                    <li><a href="Forex.html" target="_blank">Forex</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Nepali Calendar</a></li>
+                    <li><a href="#">Public Holidays</a></li>
+                    <li><a href="#">Nepali Patro</a></li>
+                    <li><a href="#">Astrology</a></li>
+                    <li><a href="#">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="#">Calculators</a></li>
+                    <li><a href="#">Converters</a></li>
+                    <li><a href="#">PDF Tools</a></li>
+                    <li><a href="#">Utilities</a></li>
+                    <li><a href="#">More Tools</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="far fa-envelope"></i> sidbatala@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
+                </ul>
+                <div class="footer-copyright">
+                    <p>&copy; <span id="current-year"></span> Shrisha. All rights reserved.</p>
+                    <p class="made-with">Made with <i class="fas fa-heart"></i> in Nepal.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="data.js"></script>
+    <script src="festivals.js"></script>
+    <script src="app.js" defer></script>
+
+</body>
+</html>
